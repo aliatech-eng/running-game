@@ -30,13 +30,13 @@ function preload(){
   restartImg = loadImage("restart.png")
   gameOverImg = loadImage("gameOver.png")
   
-  jumpSound = loadSound("jump.mp3")
-  dieSound = loadSound("die.mp3")
-  checkPointSound = loadSound("checkPoint.mp3")
+  //jumpSound = loadSound("jump.mp3")
+ // dieSound = loadSound("die.mp3")
+  //checkPointSound = loadSound("checkPoint.mp3")
 }
 
 function setup() {
-create= createCnavas(displayWidth-20,displayHeight-30);
+ createCanvas(displayWidth-20,displayHeight-30);
 
   var message = "This is a message";
  console.log(message)
@@ -94,7 +94,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     
     if(score>0 && score%100 === 0){
-       checkPointSound.play() 
+       //checkPointSound.play() 
     }
     
     if (ground.x < 0){
@@ -104,7 +104,7 @@ function draw() {
     //jump when the space key is pressed
     if(keyDown("space")&& trex.y >= 100) {
         trex.velocityY = -12;
-        jumpSound.play();
+        //jumpSound.play();
     }
     
     //add gravity
@@ -118,9 +118,9 @@ function draw() {
     
     if(obstaclesGroup.isTouching(trex)){
         //trex.velocityY = -12;
-        jumpSound.play();
+        //jumpSound.play();
         gameState = END;
-        dieSound.play()
+        //dieSound.play()
       
     }
   }
